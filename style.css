@@ -1,0 +1,188 @@
+* {
+   font-family: "Montserrat", sans-serif;
+}
+
+nav {
+   background-color: rgba(38, 38, 38, 0.744);
+
+   /* Allineare gli elementi */
+   display: flex;
+
+   /* Spostare gli elementi a destra */
+   justify-content: space-between;
+
+   /* Allineare verticalmente i link */
+   align-items: center;
+}
+
+.logoAulab {
+   width: 100px;
+   height: 100px;
+}
+
+.link {
+   text-decoration: none;
+   color: white;
+
+   /* Distanziare i link */
+   margin-right: 10px;
+}
+
+   /* Aggiungere un border bottom ai link hover */
+
+.link:hover {
+  border-bottom: 2px solid rgb(216, 216, 87);
+   }
+
+.listlink {
+   list-style-type: none;
+
+   /* Allineare i link all'interno della lista */
+   display: flex;
+}
+
+header {
+   background-image: url(./media/background.jpg);
+   height: 80vh;
+   background-size: cover;
+   background-position: center;
+
+   /* Allineare gli elementi */
+   display: flex;
+   /* Incolonnare gli elementi (assi invertiti) */
+   flex-direction: column;
+   /* Allineamento orizzontale */
+   align-items: center;
+   /* Allineamento verticale*/
+   justify-content: center;
+}
+
+h1, h2, h4 {
+   font-family:'Roboto', sans-serif;
+} 
+
+h1 {
+   color: white;
+   font-size: 50px;
+}
+
+.linkHome {
+   color: white;
+   text-decoration: none;
+}
+
+.btnArticle {
+   background-color: rgba(38, 38, 38, 0.744);
+   color: white;
+}
+
+.btnArticle:hover {
+   background-color: rgb(216, 216, 87);
+   color: black;
+}
+
+.titleArticle {
+  text-align: center;
+}
+
+/* Assegnazione di una dimensione alle immagini */
+.imgArticle {
+   width: 300px;
+ }
+
+/* Allineare orizzontamente gli articoli */ 
+.containerArticle {
+   display: flex;
+
+   /* Assegnare dimensione al contenitore degli articoli */
+   width: 60%;
+}
+ 
+/* Personalizzare la sidebar */
+aside {
+   background-color: rgb(216, 216, 87);
+   display: flex;
+   /* Incolonnare titolo e descrizione */
+   flex-direction: column;
+   /* Allineare in questo caso gli elementi */
+   justify-content: center;
+}
+
+/* Per allineare la sidebar diamo display: flex al main che è il padre della sidebar e degli articoli */
+main {
+   display: flex;
+}
+
+
+
+.box {
+   padding: 10px;
+   position: fixed;
+   top: 700px;
+   right: 60px;
+  }
+
+  .icon {
+   width: 30px;
+   height: 30px;
+  }
+
+
+  @keyframes drop-in {
+   from {
+     transform:
+       rotate(-30deg) translateY(-100%);
+     opacity: 0;
+   }
+   to {
+     transform:
+       rotate(0deg) translateY(0%);
+     opacity: 1;
+   }
+ }
+
+ .box {
+   animation: drop-in 1000ms;
+ }
+
+
+/* Media query */
+
+@media screen and (max-width: 600px) {
+   header {
+      min-height: 40vh;
+  }
+
+   h1{
+      font-size: 20px;
+   }
+
+   article{
+       width: 99%;
+       padding: 0px;
+       text-align: center;
+    }
+
+    .containerArticle {
+       flex-direction: column;
+       padding: 0px;
+       margin: 0px;
+   }
+
+   img{
+       width: 50%;
+   }
+   
+   article p {
+       font-size: 10px;
+       width: 60%;
+    }
+
+    .titleArticle{
+      font-size: 20px;
+   }
+   nav li{
+      font-size: 10px;
+  }
+}
+
