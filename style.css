@@ -2,6 +2,11 @@
    font-family: "Montserrat", sans-serif;
 }
 
+/* Eliminare margine superfluo */
+body{
+   margin: 0%;
+}
+
 nav {
    background-color: rgba(38, 38, 38, 0.744);
 
@@ -114,75 +119,96 @@ main {
 }
 
 
+footer {
+   background-color: rgba(38, 38, 38, 0.744);
 
-.box {
-   padding: 10px;
-   position: fixed;
-   top: 700px;
-   right: 60px;
-  }
+   /* Allineare elementi */
+   display: flex;
+   /* Dare spazio a dx e sx degli elementi */
+   justify-content: space-around;
+   color: white;
 
-  .icon {
-   width: 30px;
-   height: 30px;
-  }
+/* Centrare elementi footer in verticale */
+align-items: center;
 
+/* Assegnare altezza al footer */
+height: 30vh;
 
-  @keyframes drop-in {
-   from {
-     transform:
-       rotate(-30deg) translateY(-100%);
-     opacity: 0;
-   }
-   to {
-     transform:
-       rotate(0deg) translateY(0%);
-     opacity: 1;
-   }
- }
-
- .box {
-   animation: drop-in 1000ms;
- }
-
-
-/* Media query */
-
-@media screen and (max-width: 600px) {
-   header {
-      min-height: 40vh;
-  }
-
-   h1{
-      font-size: 20px;
-   }
-
-   article{
-       width: 99%;
-       padding: 0px;
-       text-align: center;
-    }
-
-    .containerArticle {
-       flex-direction: column;
-       padding: 0px;
-       margin: 0px;
-   }
-
-   img{
-       width: 50%;
-   }
-   
-   article p {
-       font-size: 10px;
-       width: 60%;
-    }
-
-    .titleArticle{
-      font-size: 20px;
-   }
-   nav li{
-      font-size: 10px;
-  }
+/* Dare più spazio tra il footer e i link attraverso margin-top */
+margin-top: 100px;
 }
 
+/* Dimensionare l'immagine icona */
+.imgIcon {
+   width: 50px;
+   height: 50px;
+
+   /* Assegnare animazione icona */
+   animation-name: Icon;
+   animation-duration: 2s;
+   animation-iteration-count: infinite;
+
+   /* Fissare il bottom */
+   position: fixed;
+   /* proprietà direzionali */
+   top: 80vh;
+}
+
+ /* Assegnare animazione icona */
+ @keyframes Icon {
+   /* inizio */
+   0%{
+      transform: translateY(50px);
+     
+   } 100%{  /* fine */
+      transform: translateY(0px);
+   }
+ }
+
+
+
+ /* Media query per la proprietà responsive */
+ @media screen and (max-width: 670px) {
+
+   /* Iniziamo dalla navbar */
+   .link { 
+      font-size: 10px;
+   }
+   .logoAulab {
+      width: 50px;
+      height: 50px;
+   }
+
+   /* Header ok */
+
+   /* main, article */
+   .containerArticle{
+      display: block;
+
+      /* vogliamo gli articoli al centro e la sidebar in basso */
+      width: 100%;
+   }
+
+   aside {
+      width: 100%;
+      display: block;
+   }
+
+   main {
+      /* posizionare al suo interno gli elementi uno sotto l'altro */
+      display: block;
+   }
+
+   article {
+      margin: 50px 0px;
+   }
+
+   /* footer */
+   footer {
+      display: block;
+   }
+
+
+ }
+   
+ 
